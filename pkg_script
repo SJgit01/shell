@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+<<script
+This is script for installing any package.
+script
+
+echo "*******installing $1************"
+
+sudo apt-get update
+sudo apt-get install $1 -y
+
+sudo systemctl start $1
+sudo systemctl enable $1
+systemctl status $1
+
+
+echo "*****Installed $1*****" 
