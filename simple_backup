@@ -2,8 +2,21 @@
 #
 #echo $(date '+%y-%m-%d_%H-%M-%S')
 
+function show_date {
+echo $(date)
+}
+
+function create_backup {
+
 timestamp=$(date '+%y-%m-%d_%H-%M-%S')
 
-backup_dir="${timestamp}_backup.zip"
+backup_dir="/home/ubuntu/backup/${timestamp}_backup.zip"
 
 zip -r $backup_dir $1
+
+}
+
+create_backup
+
+show_date
+~             
